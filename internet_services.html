@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fournir la connexion à Internet</title>
+    <link rel="icon" href="assets/img/Logo1.jpg" type="image/icon type">
+
+    <!-- ICONSCOUT CND -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+    :root {
+        --primary-color: #047aed;
+        --secondary-color: #1c3fa8;
+        --color-primary: #cc3a3b;
+        --dark-color: #002240;
+        --light-color: #f4f4f4;
+        --success-color: #5cb85c;
+        --error-color: #d9534f;
+    }
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        font-family: 'Lato', sans-serif;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    a{
+        text-decoration: none;
+        color: #333;
+}
+
+    h1,
+    h2 {
+        font-weight: 300;
+        line-height: 1.2;
+        margin: 10px 0;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 30px;
+        cursor: pointer;
+        background: var(--color-primary);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        transform: scale(0.98);
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: #333;
+    }
+
+    /* .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    } */
+
+    /* Navbar */
+    .navbar {
+        background-color: var(--color-primary);
+        color: #fff;
+        height: 70px;
+    }
+
+    .navbar ul {
+        display: flex;
+    }
+
+    .navbar a {
+        color: #fff;
+        padding: 10px;
+        margin: 0 5px;
+    }
+
+    .navbar a:hover {
+        border-bottom: 2px #fff solid;
+    }
+
+    .navbar .flex {
+        justify-content: space-between;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    @media (max-width: 500px){
+        .navbar {
+            height: 110px;
+        }
+
+        .navbar .flex {
+            flex-direction: column;
+        }
+
+        .navbar ul {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    /* Features */
+    .features-sub-head i{
+        font-size: 250px;
+        width: 300px;
+        justify-self: flex-end;
+    }
+
+    .features-sub-head img,
+    .features-sub-head .container i{
+        width: 300px;
+        justify-self: flex-end;
+    }
+
+    .features-sub-head .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .bg-light{
+        background-color: var(--light-color);
+        /* background-color: #fff; */
+        color: #333;
+    }
+
+    .py-3{
+        padding: 2rem 0;
+    }
+
+    .md {
+        font-size: 2rem;
+    }
+
+    .features-sub-head .details__serivces{
+        margin-right: 50px; 
+        margin-left: 50px;
+    }
+
+    @media (max-width: 768px){
+        .features-sub-head{
+            text-align: center;
+        }
+
+        .features-sub-head img,
+        .features-sub-head i{
+            justify-self: center;
+            width: 200px;
+        }
+
+        .features-sub-head .details__serivces{
+            margin-left: 5px;
+            margin-right: 5px;
+            text-align: left;
+        }
+    }
+
+    @media (max-width: 700px){
+        .features-sub-head .grid{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+        }
+    }
+
+    .features-main .card > i {
+        margin-right: 20px;
+    }
+
+    .features-main .grid {
+        padding: 30px;        
+    }
+
+    .features-main .grid > *:first-child {
+        grid-column: 1 / span 3;
+    }
+
+    .features-main .grid > *:nth-child(2) {
+        grid-column: 1 / span 2;
+    }
+
+    .my-2 {
+        margin: 1.5rem 0;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        background-color: #fff;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .features-main .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    @media (max-width: 768px){
+        .features-main .grid{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .features-main .grid > *:first-child,
+        .features-main .grid > *:nth-child(2) {
+            grid-column: 1;
+        }
+    }
+
+
+    /* ========== FOOTER ========== */
+footer{
+  background: var(--color-light);
+  /* position: fixed; */
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 16px 70px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 20px 0 0;
+  transition: background 0.3S linear;
+}
+
+footer .container{
+  max-width: 1248px;
+  padding: 36px 40px;
+  margin: auto;
+}
+
+footer .container .content__footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+footer .container .content__footer .profil .logo__area{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+footer .container .content__footer .profil .logo__area img{
+  width: 50px;
+  /* border: 1px solid black; */
+  /* border-radius: 50%; */
+}
+
+footer .container .content__footer .profil .logo__area .logo__name{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 1rem;
+  color: var(--color-black);
+}
+
+footer .container .content__footer .profil .desc__area{
+  max-width: 320px;
+  margin-bottom: 1.25rem;
+}
+
+footer .container .content__footer .profil .desc__area p{
+  color: var(--color-gary);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+footer .container .content__footer .profil .social__media a{
+  color: var(--color-gary);
+  margin-right: 22px;
+  font-size: 18px;
+}
+
+footer .container .content__footer .profil .social__media a:hover{
+  color: var(--color-primary);
+}
+
+footer .container .content__footer .service__area{
+  display: flex;
+  /* background: red; */
+}
+
+footer .container .content__footer .service__area .service__header{
+  margin-right: 40px;
+}
+
+footer .container .content__footer .service__area .service__header li{
+  margin-bottom: 10px;
+}
+
+footer .container .content__footer .service__area .service__header li.service__name{
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+footer .container .content__footer .service__area .service__header li a{
+  color: var(--color-gary);
+  padding-bottom: 1px;
+  font-weight: 400;
+}
+
+footer .container .content__footer .service__area .service__header li a:hover{
+  color: var(--color-primary);
+}
+
+footer .container hr{
+  height: 1px;
+  border: none;
+  background: var(--color-gary);
+  margin-bottom: 1rem;
+}
+
+footer .container .footer__botton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+footer .container .footer__botton .copy__right{
+  color: var(--color-gary);
+  display: flex;
+  align-items: center;
+}
+
+footer .container .footer__botton .copy__right span{
+  margin-left: 8px;
+  font-weight: 400;
+  /* letter-spacing: 0.135rem; */
+}
+
+footer .container .footer__botton .tou{
+  color: var(--color-gary);
+  margin-left: 1.5rem;
+}
+
+footer .container .footer__botton .tou a{
+  color: var(--color-gary);
+  text-decoration: underline;
+}
+
+
+/* ========== FOOTER ========== */
+@media only screen and (max-width: 1150px){
+    footer .container .content__footer{
+      flex-wrap: wrap;
+      justify-content: left;
+    }
+  
+    footer .container .content__footer .profil .social__media{
+      margin-bottom: 1rem;
+    }
+  
+    footer .container .content__footer .service__area{
+      flex-wrap: wrap;
+      justify-content: left;
+    }
+  
+    footer .container .content__footer .service__area .service__header{
+      margin-left: 0;
+      margin-right: 40px;
+    }
+  }
+  
+  @media only screen and (max-width: 806px){
+    footer .container .footer__botton{
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    footer .container .footer__botton .copy__right{
+      margin-bottom: 8px;
+    }
+  }
+
+</style>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container flex">
+            <a href="index.html"><h2>SkyTechdrc</h2></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="features-sub-head bg-light py-3">
+        <div class="container grid">
+            <div>
+                <h1 class="md">Fournir la connexion à Internet</h1>
+                <p>
+                    A la disposition d'un particulier ou des entreprises, l'accès à Internet, 
+                    avec une désignation des moyens à votre disposition et nous facilitons le type d'accès 
+                    que vous choisirez pour une bonne utilisation de la connexion Internet, soit chez vous 
+                    ou au sein de votre entreprise.
+                </p>
+            </div>
+            <img src="assets/img/Internet.png" alt="">
+        </div>
+        <!-- <p class="details__serivces">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Laboriosam tempore inventore, perspiciatis rem incidunt hic dolores ullam alias! 
+            Consequuntur quis laborum qui, amet necessitatibus corrupti quaerat eveniet ad! At, 
+            ipsam deleniti officia odit ut, voluptate delectus quae neque in ex cumque expedita, 
+            asperiores suscipit numquam iure. Aliquam at excepturi repellendus eaque aspernatur quos! 
+            Commodi illum alias in excepturi numquam aut officiis? 
+            Aliquam consequuntur odit voluptatum voluptate vitae. 
+            Qui eos repellendus nostrum quidem veniam doloribus odio possimus vero dolorum 
+            quia modi eius corrupti reprehenderit totam, non quibusdam earum expedita, 
+            nisi quasi quisquam minima ullam repellat aperiam. 
+            Corrupti quas vero architecto unde voluptas fugit labore 
+            perferendis dolorum reiciendis. Repellendus corporis illo nihil!
+        </p> -->
+    </section>
+
+    <section class="features-main my-2">
+        <div class="container grid grid-3">
+            <div class="card flex">
+                <p>
+                  Prenez contact maintenant et nous nous joindrons à vous pour vous rendre ce service. <br>
+                  Merci !
+                </p>
+            </div>
+            <a href="index.html#contact" class="btn" style="text-align:center;">Contactez-nous</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+          <div class="content__footer">
+            <div class="profil">
+              <div class="logo__area">
+                <img src="assets/img/Logo1.jpg" alt="">
+                <span class="logo__name">SKY TECHNOLOGIES DRC</span>
+              </div>
+    
+              <div class="desc__area">
+                <p>
+                  Les nouvelles technologies chez Vous !
+                </p>
+              </div>
+    
+              <div class="social__media">
+                <a href=""><i class="uil uil-facebook"></i></a>
+                <a href=""><i class="uil uil-envelope-alt"></i></a>
+                <a href=""><i class="uil uil-twitter"></i></a>
+                <a href=""><i class="uil uil-facebook-f"></i></a>
+              </div>
+            </div>
+            <div class="service__area">
+              <ul class="service__header">
+                <li class="service__name">Nos Services</li>
+                <li><a href="internet_services.html">Fournir la connexion à Internet</a></li>
+                <li><a href="network_services.html">Solutions en Réseau</a></li>
+                <li><a href="maintenance_services.html">Solutions de Maintenance</a></li>
+                <li><a href="Systèmes TIC_services.html">Solutions de Systèmes TIC</a></li>
+                <li><a href="Programmation_services.html">Solutions de Programmation</a></li>
+                <li><a href="trainings.html">Des Formations Certifées</a></li>
+              </ul>
+    
+              <!-- <ul class="service__header">
+                <li class="service__name">Services</li>
+                <li><a href="">Mise en place des Reseaux</a></li>
+                <li><a href="">Mise en place des Reseaux</a></li>
+                <li><a href="">Mise en place des Reseaux</a></li>
+                <li><a href="">Mise en place des Reseaux</a></li>
+                <li><a href="">Mise en place des Reseaux</a></li>
+                <li><a href="">Mise en place des Reseaux</a></li>
+              </ul> -->
+    
+              <ul class="service__header">
+                <li class="service__name">SkyTech</li>
+                <li><a href="#home">Acceuil</a></li>
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a href="#team">Notre Equipe</a></li>
+                <li><a href="#contact">Contactez-Nous</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="footer__botton">
+            <div class="copy__right">
+              <span><i class="uil uil-copyright"></i> 2022 skytechnologiesdrc all right reserved</span>
+            </div>
+            <div class="tou">
+              <span>Designed by <a href="hhtps://kigherird004.github.io">Daniel KIGHERI Richard</a></span>
+            </div>
+          </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
